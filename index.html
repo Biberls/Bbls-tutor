@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker Portal</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Courier New, monospace;
+    background:black;
+    color:#00ff00;
+}
+
+/* MENU */
+header{
+    background:#050505;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    border-bottom:1px solid #00ff00;
+}
+
+.logo{
+    font-size:18px;
+    text-shadow:0 0 5px #00ff00;
+}
+
+.menu{
+    position:relative;
+    cursor:pointer;
+}
+
+.menu span{
+    font-size:22px;
+}
+
+.dropdown{
+    display:none;
+    position:absolute;
+    right:0;
+    top:30px;
+    background:#000;
+    border:1px solid #00ff00;
+    min-width:150px;
+}
+
+.dropdown a{
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    color:#00ff00;
+}
+
+.dropdown a:hover{
+    background:#003300;
+}
+
+/* SEÇÕES */
+section{
+    padding:100px 20px;
+    display:none;
+}
+
+.active{
+    display:block;
+}
+
+h1{
+    text-align:center;
+    text-shadow:0 0 10px #00ff00;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#050505;
+    border:1px solid #00ff00;
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    box-shadow:0 0 15px #00ff00;
+}
+
+button{
+    margin-top:10px;
+    padding:8px 15px;
+    background:black;
+    border:1px solid #00ff00;
+    color:#00ff00;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#003300;
+}
+
+.link{
+    color:#00ff00;
+    text-decoration:none;
+}
+
+.link:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">[ HACKER PORTAL ]</div>
+    <div class="menu" onclick="toggleMenu()">
+        <span>⋮</span>
+        <div class="dropdown" id="dropdown">
+            <a href="#" onclick="showSection('extras')">Extras</a>
+            <a href="#" onclick="showSection('downloads')">Downloads</a>
+        </div>
+    </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <h1>// TUTORIAIS & FERRAMENTAS //</h1>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Tutorial 1</h3>
+            <p>baixar filmes e séries com adm</p>
+            <!-- COLOQUE O LINK DENTRO DO href="" -->
+            <a href="https://youtu.be/XqqmcyrliKI?si=zh4Ia0D-LpTIZhSI" target="_blank">
+                <button>Acessar</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Ferramenta 1</h3>
+            <p>usar 3d analyze para otimizar as batatas </p>
+            <!-- COLOQUE O LINK AQUI -->
+            <a href="https://youtu.be/XqqmcyrliKI?si=zh4Ia0D-LpTIZhSI" target="_blank">
+                <button>Acessar</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Ferramenta 2</h3>
+            <p>como conectar psiphon no pc</p>
+            <!-- COLOQUE O LINK AQUI -->
+            <a href="https://www.facebook.com/share/v/18LtcNg2Rn/" target="_blank">
+                <button>Acessar</button>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXTRAS -->
+<section id="extras">
+    <h1>// EXTRAS //</h1>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Ferramenta Extra 1</h3>
+            <!-- COLOQUE O LINK AQUI -->
+            <a href="https://youtu.be/I-VBF9ajE4M?si=zQ72rN3fQaXnoOxL" target="_blank">
+                <button>Acessar</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Ferramenta Extra 2</h3>
+            <!-- COLOQUE O LINK AQUI -->
+            <a href="https://youtu.be/7tXpspcOlNI?si=c6gE3aNydGm8pAlZ" target="_blank">
+                <button>Acessar</button>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+    <h1>// DOWNLOADS //</h1>
+    <div class="grid">
+
+        <div class="card">
+            <!-- COLOQUE O LINK DO SITE DE DOWNLOAD -->
+            <a class="link" href="steamrip.com" target="_blank">
+                Site Download 1
+            </a>
+        </div>
+
+        <div class="card">
+            <a class="link" href="adescargar.online" target="_blank">
+                Site Download 2
+            </a>
+        </div>
+
+        <div class="card">
+            <a class="link" href="deepwebnest.co." target="_blank">
+                Site Download 3
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function toggleMenu(){
+    const dropdown = document.getElementById("dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+function showSection(sectionId){
+    document.querySelectorAll("section").forEach(section=>{
+        section.classList.remove("active");
+    });
+    document.getElementById(sectionId).classList.add("active");
+    document.getElementById("dropdown").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,1 +1,27 @@
+body{
+    margin:0;
+    background:black;
+    color:#00ff00;
+    font-family:Courier New, monospace;
+}
 
+h1{
+    text-shadow:0 0 10px #00ff00;
+}
+
+.card{
+    background:#050505;
+    border:1px solid #00ff00;
+    padding:20px;
+    margin:15px;
+}
+
+button{
+    background:black;
+    color:#00ff00;
+    border:1px solid #00ff00;
+}
+
+button:hover{
+    background:#003300;
+  }
